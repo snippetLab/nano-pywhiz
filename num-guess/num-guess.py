@@ -1,40 +1,33 @@
 import random as rnd;
 
-num = rnd.randint(1, 100);
-# print(num);
+name = input("Enter Name : ");
+wantTo = input(f"Hey!, {name} do you want to play?");
 
-print("Hey!, What's you name?")
-player_name = str(input("Enter Name : "));
-print(f"Hi! {player_name}.");
+num = rnd.randint(1, 10);
 
-# max_try = 0;
-# max_try = [];
+if wantTo.lower() != "Yes":
+    print("That's cool! Thanks.")
+    exit()
 
-wantTo = input("Do you want to play (y/n)? ");
+while wantTo.lower() == "Yes":
 
-if wantTo.lower() == "Yes" :
-    print("That's cool. Thanks!")
-    exit;
+    try:
+        pick = int(input("Enter Number : "))
 
-while wantTo == 'yes' :
-    try :
-        guess = int(input("Enter Number : "))
-
-        if guess < 1 or guess > 100 :
-            print("Not valid")
-            break
-
-        if guess == num :
-            print("Yay!. You got it 🎉")
-            wantTo = input("Do you want play again? (y/n) ")
+        if pick not in range(num) :
+            print("Value out of range")
+            
+        if num == pick:
+            print("Nice, You won!")
+            wantTo = input(f"Hey!, {name} do you want to play?")
 
             if wantTo != "yes" :
-                print("Have nice day.")
+                print("Thanks!, It was nice one.")
         else :
-            if guess > num :
-                print("High")
-            elif guess < num :
-                print("Low")
-    except ValueError as err:
-        print("Not a valid number. Try again!")
-        print(err)
+            if pick > num and pick in range(num):
+                print("Too Much")
+            elif pick < num and pick in range(num):
+                print("Fewer")
+
+    except ValueError as err :
+        print("Enter valid number")
