@@ -14,7 +14,7 @@ while wantTo.lower() == "Yes":
     try:
         pick = int(input("Enter Number : "))
 
-        if pick not in range(num) :
+        if pick not in range(num):
             print("Value out of range")
             
         if num == pick:
