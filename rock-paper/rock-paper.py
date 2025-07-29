@@ -1,16 +1,16 @@
 import random as rnd;
 
-def rock_scissor() :
+def rock_scissor():
     options = ["rock", "paper", "scissor"];
 
-    while True :
+    while True:
         human = input("Enter Your Choice : ").lower()
 
-        if human == "Quit".lower() :
+        if human == "Quit".lower():
             print("Thanks For Playing")
             break
 
-        if human not in options :
+        if human not in options:
             print("Enter Valid Option")
             continue
 
@@ -19,13 +19,13 @@ def rock_scissor() :
         print(f"Human Choice : {human}");
         print(f"Computer Choice : {computer}");
 
-        if human == computer :
+        if human == computer:
             print("Match Tied")
 
-        elif (human == "paper" and computer == "rock") or (human == "scissor" and computer == "rock") or (human == "scissor" and computer == "paper") :
+        elif (human == "paper" and computer == "rock") or (human == "scissor" and computer == "rock") or (human == "scissor" and computer == "paper"):
             print("Human Wins!")
 
-        else :
+        else:
             print("Human Lose!")
         
         print("Thanks for playing!")
